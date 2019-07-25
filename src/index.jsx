@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import './index.scss'
+import './components/css/index.scss'
 import * as serviceWorker from './serviceWorker'
 import { BrowserRouter as Router } from 'react-router-dom'
 import Routes from './routes'
@@ -36,7 +36,7 @@ class AppBase extends Component {
   }
   render() {
     return (
-      <Router>
+      <Router basename="/E-commerce-with-React">
         <Routes />
       </Router>
     )

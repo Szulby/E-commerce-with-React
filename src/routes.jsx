@@ -19,6 +19,7 @@ class Routes extends Component {
         <Route path="/product/:id" component={ProductPage} />
         <Route path="/cart" component={CartPage} />
         <Route path="/admin" component={Admin} />
+        <Route component={() => <div>404 Not found </div>} />
       </React.Fragment>
     )
   }
