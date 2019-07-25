@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import './components/css/index.scss'
 import * as serviceWorker from './serviceWorker'
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router, HashRouter } from 'react-router-dom'
 import Routes from './routes'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Firebase, { FirebaseContext } from './firebase'
@@ -36,9 +36,9 @@ class AppBase extends Component {
   }
   render() {
     return (
-      <Router basename="/E-commerce-with-React">
+      <HashRouter basename="/">
         <Routes />
-      </Router>
+      </HashRouter>
     )
   }
 }
