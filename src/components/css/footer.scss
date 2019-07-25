@@ -1,0 +1,48 @@
+$background-color: rgb(23, 30, 40);
+@import '/variables/variables';
+footer {
+  background-color: $background-color;
+  .footer-container {
+    padding: 50px 20px;
+    color: rgb(151, 151, 151);
+    h1 {
+      font-size: 30px;
+      margin-bottom: 15px;
+      cursor: pointer;
+    }
+    h2 {
+      color: rgb(224, 224, 224);
+      font-size: 22px;
+      margin-bottom: 22px;
+      cursor: pointer;
+    }
+    p {
+      line-height: 13px;
+      width: 200px;
+      cursor: pointer;
+    }
+    .icon-paragraph {
+      &:hover {
+        .icon {
+          color: $base-color;
+        }
+      }
+    }
+    .icon {
+      margin-right: 15px;
+      transition: color 0.5s;
+    }
+  }
+}
+@media (max-width: 993px) {
+  footer {
+    .footer-container {
+      p {
+        width: 170px;
+      }
+      .icon {
+        margin-right: 15px;
+      }
+    }
+  }
+}

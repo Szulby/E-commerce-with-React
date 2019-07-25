@@ -1,0 +1,77 @@
+@import '../variables/variables';
+.cart-product {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  color: $second-color;
+  overflow: hidden;
+  position: relative;
+  h2 {
+    font-size: 42px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    z-index: 2;
+    font-weight: bold;
+  }
+  p {
+    margin-bottom: 30px;
+    z-index: 2;
+  }
+  img {
+    position: absolute;
+    height: 300px;
+  }
+  .price {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .search-icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgb(82, 89, 73);
+    border-radius: 50%;
+    color: rgb(236, 236, 236);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+}
+.cart-product:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 200, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.cart-product:hover {
+  cursor: pointer;
+  &:after {
+    opacity: 1;
+  }
+  & {
+    .price {
+      opacity: 1;
+    }
+    .search-icon {
+      opacity: 1;
+    }
+  }
+}

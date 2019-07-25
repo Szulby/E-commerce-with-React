@@ -1,0 +1,65 @@
+$background-color: rgb(18, 25, 33);
+.newsletter {
+  background: $background-color;
+  color: rgb(221, 221, 221);
+  .container {
+    .container-title {
+      h2 {
+        line-height: 40px;
+      }
+    }
+    .form-container {
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      form {
+        input {
+          width: 320px;
+          height: 40px;
+          margin-right: 20px;
+        }
+        button {
+          background: $background-color;
+          border: 1px solid white;
+          width: 200px;
+          height: 40px;
+          color: white;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 767.98px) {
+  .newsletter {
+    .container {
+      .form-container {
+        form {
+          input {
+            width: 300px;
+          }
+          button {
+            width: 120px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 575.98px) {
+  .newsletter {
+    .container {
+      .form-container {
+        form {
+          input {
+            width: 200px;
+          }
+          button {
+            width: 100px;
+          }
+        }
+      }
+    }
+  }
+}

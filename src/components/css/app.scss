@@ -1,0 +1,20 @@
+@import 'variables/variables';
+.scrrol-to-up {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 50px;
+  height: 50px;
+  background: $second-color;
+  border: 1px solid white;
+  border-radius: 50%;
+  color: rgb(214, 214, 214);
+  opacity: 0;
+  z-index: 99;
+  transform: scale(0);
+  transition: 1s;
+}
+.show {
+  opacity: 1;
+  transform: scale(1);
+}

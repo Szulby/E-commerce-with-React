@@ -1,0 +1,37 @@
+@import '../variables/variables';
+.new-product {
+  &:hover {
+    cursor: pointer;
+    background: rgb(231, 231, 231);
+    transition: all 0.8s;
+    .price {
+      color: $base-color;
+      transition: color 0.5s;
+    }
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $second-color;
+  img {
+    margin-top: 15px;
+    height: 300px;
+    max-width: 250px;
+  }
+  h2 {
+    font-size: 25px;
+    margin-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+  }
+  p {
+    margin-bottom: 10px;
+  }
+  .short-description {
+    text-align: center;
+  }
+  .price {
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,127 @@
+@import '../variables/variables';
+.container-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h2 {
+    margin-top: 80px;
+    color: $second-color;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 100px;
+    font-weight: bold;
+  }
+  p {
+    width: 700px;
+    margin: auto;
+    text-align: center;
+  }
+}
+.cart-container {
+  margin-top: 80px;
+  .cart-product {
+    height: 350px;
+    padding: 0;
+    &:nth-child(n) {
+      border: 1px solid rgb(179, 179, 179);
+      border-width: 1px 1px 0 0;
+    }
+  }
+}
+@media (min-width: 992px) {
+  .cart-container {
+    .cart-product {
+      &:nth-child(2n -1) {
+        background: $dark-grey;
+      }
+      &:nth-child(2n) {
+        background: $light-grey;
+      }
+      &:nth-child(2n + 6) {
+        background: $dark-grey;
+      }
+      &:nth-child(2n + 5) {
+        background: $light-grey;
+      }
+      &:nth-child(4n + 4) {
+        border: 1px solid rgb(179, 179, 179);
+        border-width: 1px 0 0 0;
+      }
+    }
+  }
+}
+@media (max-width: 991px) {
+  .container-title {
+    p {
+      width: 600px;
+    }
+  }
+  .cart-container {
+    .cart-product {
+      &:nth-child(2n + 1) {
+        background: $dark-grey;
+      }
+      &:nth-child(2n + 2) {
+        background: $light-grey;
+      }
+      &:nth-child(3n + 3) {
+        border: 1px solid rgb(179, 179, 179);
+        border-width: 1px 0 0 0;
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .container-title {
+    h2 {
+      margin-top: 50px;
+    }
+    p {
+      width: 100%;
+    }
+  }
+  .cart-container {
+    .cart-product {
+      &:nth-child(n) {
+        background: $light-grey;
+      }
+      &:nth-child(3n + 1) {
+        background: $dark-grey;
+      }
+      &:nth-child(3n + 5) {
+        background: $dark-grey;
+      }
+      &:nth-child(2n + 7) {
+        background: $light-grey;
+      }
+      &:nth-child(2n + 2) {
+        border: 1px solid rgb(179, 179, 179);
+        border-width: 1px 0 0 0;
+      }
+    }
+  }
+}
+@media (max-width: 575px) {
+  .container-title {
+    h2 {
+      margin-top: 50px;
+    }
+    p {
+      width: 100%;
+    }
+  }
+  .cart-container {
+    .cart-product {
+      &:nth-child(2n) {
+        background: $light-grey;
+      }
+      &:nth-child(2n + 1) {
+        background: $dark-grey;
+      }
+      &:nth-child(n) {
+        border: 1px solid rgb(179, 179, 179);
+        border-width: 1px 0 0 0;
+      }
+    }
+  }
+}
