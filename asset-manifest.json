@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/E-commerce-with-React/static/css/main.94bc36b6.chunk.css",
-    "main.js": "/E-commerce-with-React/static/js/main.02558ec8.chunk.js",
-    "main.js.map": "/E-commerce-with-React/static/js/main.02558ec8.chunk.js.map",
+    "main.css": "/E-commerce-with-React/static/css/main.ebe81d2c.chunk.css",
+    "main.js": "/E-commerce-with-React/static/js/main.971f50b0.chunk.js",
+    "main.js.map": "/E-commerce-with-React/static/js/main.971f50b0.chunk.js.map",
     "runtime~main.js": "/E-commerce-with-React/static/js/runtime~main.5e94abec.js",
     "runtime~main.js.map": "/E-commerce-with-React/static/js/runtime~main.5e94abec.js.map",
     "static/css/2.0624914a.chunk.css": "/E-commerce-with-React/static/css/2.0624914a.chunk.css",
-    "static/js/2.7be9658c.chunk.js": "/E-commerce-with-React/static/js/2.7be9658c.chunk.js",
-    "static/js/2.7be9658c.chunk.js.map": "/E-commerce-with-React/static/js/2.7be9658c.chunk.js.map",
+    "static/js/2.596329b9.chunk.js": "/E-commerce-with-React/static/js/2.596329b9.chunk.js",
+    "static/js/2.596329b9.chunk.js.map": "/E-commerce-with-React/static/js/2.596329b9.chunk.js.map",
     "index.html": "/E-commerce-with-React/index.html",
-    "precache-manifest.37ecbc4ee4df45ef345791089a4fe7a4.js": "/E-commerce-with-React/precache-manifest.37ecbc4ee4df45ef345791089a4fe7a4.js",
+    "precache-manifest.bbd6f6c52db2b88d1cf79f7fa89dc961.js": "/E-commerce-with-React/precache-manifest.bbd6f6c52db2b88d1cf79f7fa89dc961.js",
     "service-worker.js": "/E-commerce-with-React/service-worker.js",
     "static/css/2.0624914a.chunk.css.map": "/E-commerce-with-React/static/css/2.0624914a.chunk.css.map",
-    "static/css/main.94bc36b6.chunk.css.map": "/E-commerce-with-React/static/css/main.94bc36b6.chunk.css.map",
+    "static/css/main.ebe81d2c.chunk.css.map": "/E-commerce-with-React/static/css/main.ebe81d2c.chunk.css.map",
     "static/media/jumbotron.png": "/E-commerce-with-React/static/media/jumbotron.f805fc80.png"
   }
 }
