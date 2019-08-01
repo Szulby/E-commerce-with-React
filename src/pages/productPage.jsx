@@ -4,6 +4,7 @@ import { withFirebase } from '../firebase'
 import '../components/css/productPage.scss'
 import { connect } from 'react-redux'
 import { addCart } from '../redux/actions'
+import Helmet from 'react-helmet'
 class ProductPageBase extends Component {
   state = {
     id: '',
@@ -39,6 +40,7 @@ class ProductPageBase extends Component {
   render() {
     return (
       <Layout>
+        <Helmet title={this.state.name} />
         <div className="container">
           <div className="row product-container">
             <div className="col-md-4 picture-container">
