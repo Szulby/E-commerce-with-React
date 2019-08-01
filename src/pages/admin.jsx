@@ -3,7 +3,7 @@ import { withFirebase } from '../firebase'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import AdminForm from '../components/adminForm'
-import Header from '../components/header'
+import Layout from '../components/layout'
 import '../components/css/admin.scss'
 class AdminBase extends Component {
   state = {
@@ -74,8 +74,11 @@ class AdminBase extends Component {
   render() {
     return (
       <React.Fragment>
-        <Header />
-        <div className="container">{this.isAuth()}</div>
+        <Layout>
+          <div className="container" style={{ marginBottom: 20 }}>
+            {this.isAuth()}
+          </div>
+        </Layout>
       </React.Fragment>
     )
   }

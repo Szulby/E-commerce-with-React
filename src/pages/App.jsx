@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
-import Header from '../components/header'
 import Jumbotron from '../components/jumbotron'
 import Main from '../components/main'
 import { NewProductCart } from '../components/newProductCart'
 import Cnowledge from '../components/cnowledge'
-import Newsletter from '../components/newsletter'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
-import Footer from '../components/footer'
+import Layout from '../components/layout'
+import Helmet from 'react-helmet'
 import '../components/css/app.scss'
 
 class App extends Component {
@@ -60,14 +59,12 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-        <Header />
+      <Layout>
+        <Helmet title="Shop" />
         <Jumbotron />
         <Main />
         <NewProductCart />
         <Cnowledge />
-        <Newsletter />
-        <Footer />
         <button
           className="scrrol-to-up "
           id="scrollTop"
@@ -75,7 +72,7 @@ class App extends Component {
         >
           <FontAwesomeIcon icon={faArrowUp} />
         </button>
-      </div>
+      </Layout>
     )
   }
 }

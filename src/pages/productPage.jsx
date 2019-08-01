@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import Header from '../components/header'
-import Footer from '../components/footer'
-import Newsletter from '../components/newsletter'
+import Layout from '../components/layout'
 import { withFirebase } from '../firebase'
 import '../components/css/productPage.scss'
 import { connect } from 'react-redux'
@@ -40,8 +38,7 @@ class ProductPageBase extends Component {
   }
   render() {
     return (
-      <React.Fragment>
-        <Header />
+      <Layout>
         <div className="container">
           <div className="row product-container">
             <div className="col-md-4 picture-container">
@@ -55,9 +52,7 @@ class ProductPageBase extends Component {
             <button onClick={this.buyFunction}>Buy</button>
           </div>
         </div>
-        <Newsletter />
-        <Footer />
-      </React.Fragment>
+      </Layout>
     )
   }
 }

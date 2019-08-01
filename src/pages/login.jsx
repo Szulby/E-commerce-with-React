@@ -1,16 +1,13 @@
 import React, { Component } from 'react'
 import { SignInForm } from '../components/signin'
 import SignUpForm from '../components/signup'
-import Header from '../components/header'
-import Newsletter from '../components/newsletter'
-import Footer from '../components/footer'
+import Layout from '../components/layout'
 import '../components/css/login.scss'
 class Login extends Component {
   state = {}
   render() {
     return (
-      <React.Fragment>
-        <Header />
+      <Layout>
         <div className="container">
           <div className="row form-container">
             <div className="col-md-6 login">
@@ -21,9 +18,7 @@ class Login extends Component {
             </div>
           </div>
         </div>
-        <Newsletter />
-        <Footer />
-      </React.Fragment>
+      </Layout>
     )
   }
 }

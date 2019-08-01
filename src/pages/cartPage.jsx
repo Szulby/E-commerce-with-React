@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
-import Header from '../components/header'
 import { connect } from 'react-redux'
 import { removeProduct, buyProduct } from '../redux/actions'
-import Newsletter from '../components/newsletter'
-import Footer from '../components/footer'
 import CartsList from '../components/cartsList'
 import '../components/css/cartPage.scss'
+import Layout from '../components/layout'
 class CartPageBase extends Component {
   state = {
     isBought: false,
@@ -24,8 +22,7 @@ class CartPageBase extends Component {
   }
   render() {
     return (
-      <React.Fragment>
-        <Header />
+      <Layout>
         <div className="container carts-container">
           <h2>Cart:</h2>
           {this.state.isBought && (
@@ -45,9 +42,7 @@ class CartPageBase extends Component {
             Buy
           </button>
         </div>
-        <Newsletter />
-        <Footer />
-      </React.Fragment>
+      </Layout>
     )
   }
 }
