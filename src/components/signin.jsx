@@ -21,7 +21,7 @@ class SignInFormBase extends Component {
       .doSignInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState({ ...initalState })
-        this.props.history.push('/')
+        this.props.history.goBack()
       })
       .catch(error => {
         this.setState({ error: error.message })
@@ -32,7 +32,7 @@ class SignInFormBase extends Component {
     const { email, password, error } = this.state
     const isValid = !email || !password
     if (error) {
-      let hidden = document.getElementsByClassName('hidden')
+      let hidden = document.getElementsByClassName('login-hint')
       hidden[0].classList.remove('hidden')
     }
     return (
@@ -68,7 +68,7 @@ class SignInFormBase extends Component {
             Sign In
           </button>
 
-          <p className="hidden">error message: {error}</p>
+          <p className="login-hint hidden">error message: {error}</p>
         </form>
       </div>
     )

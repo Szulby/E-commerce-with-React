@@ -35,10 +35,8 @@ class SignUpFormBase extends Component {
     const { username, email, password } = this.state
     const isValid = !username || !email || !password
     if (this.state.error) {
-      const hidden = document.getElementsByClassName('hidden')
-      if (hidden[0]) {
-        hidden[0].classList.remove('hidden')
-      }
+      const hidden = document.getElementsByClassName('register-hint')
+      hidden[0].classList.remove('hidden')
     }
     return (
       <div className="login-form">
@@ -82,7 +80,9 @@ class SignUpFormBase extends Component {
           >
             Sign Up
           </button>
-          <p className="hidden">error message: {this.state.error}</p>
+          <p className="register-hint hidden">
+            error message: {this.state.error}
+          </p>
         </form>
       </div>
     )

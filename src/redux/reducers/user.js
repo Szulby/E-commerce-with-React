@@ -9,6 +9,8 @@ export const user = (
       return {
         user: action.user,
       }
+    case 'REMOVE_USER':
+      return {}
     default:
       return state
   }

@@ -1,15 +1,19 @@
 import React, { Component } from 'react'
 import { withFirebase } from '../firebase'
-import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import AdminForm from '../components/adminForm'
 import Layout from '../components/layout'
 import '../components/css/admin.scss'
 class AdminBase extends Component {
-  state = {
-    url: '',
-    name: '',
-    description: '',
+  constructor(props) {
+    super(props)
+    this.timer = null
+    this.loadingTimer = null
+    this.state = {
+      url: '',
+      name: '',
+      description: '',
+    }
   }
   sendProduct = e => {
     e.preventDefault()
@@ -53,7 +57,14 @@ class AdminBase extends Component {
     )
   }
   isAuth = () => {
+    if (this.timer || this.loadingTimer) {
+      clearTimeout(this.timer)
+      clearTimeout(this.loadingTimer)
+    }
     if (!this.props.user) {
+      this.loadingTimer = setTimeout(() => {
+        this.props.history.push('/login')
+      }, 1000)
       return <p>loading</p>
     } else if (this.props.user.role === 'admin') {
       return (
@@ -67,7 +78,10 @@ class AdminBase extends Component {
         />
       )
     } else {
-      return <Redirect to="/login" />
+      this.timer = setTimeout(() => {
+        this.props.history.push('/login')
+      }, 5000)
+      return <p>you have no access here</p>
     }
   }
 
