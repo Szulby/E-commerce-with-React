@@ -14,16 +14,15 @@ class MainBase extends Component {
       .once('value')
       .then(response => {
         response.forEach(item => {
-          var val = {
+          products.push({
             name: item.val().name,
             description: item.val().description,
             key: item.key,
             url: item.val().url,
             id: item.key,
-          }
-          products.push(val)
+          })
         })
-        this.setState({ products: products })
+        this.setState({ products })
       })
   }
   render() {

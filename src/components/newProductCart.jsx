@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { withFirebase } from '../firebase'
+import { withRouter } from 'react-router-dom'
+import { compose } from 'recompose'
 import './css/newProduct/newProduct.scss'
 class NewProductCartBase extends Component {
   state = {
@@ -23,6 +25,9 @@ class NewProductCartBase extends Component {
         this.setState({ products })
       })
   }
+  redirect = id => {
+    this.props.history.push(`/product/${id}`)
+  }
   render() {
     return (
       <div className="container">
@@ -36,7 +41,11 @@ class NewProductCartBase extends Component {
         </div>
         <div className="row cart-container">
           {this.state.products.map(p => (
-            <div key={p.key} className="col-lg-3 col-md-3 col-sm-6 new-product">
+            <div
+              key={p.key}
+              className="col-lg-3 col-md-3 col-sm-6 new-product"
+              onClick={() => this.redirect(p.key)}
+            >
               <img src={p.url} alt="" />
               <h2>{p.name}</h2>
               <p className="short-description">
@@ -52,5 +61,8 @@ class NewProductCartBase extends Component {
     )
   }
 }
-const NewProductCart = withFirebase(NewProductCartBase)
+const NewProductCart = compose(
+  withRouter,
+  withFirebase
+)(NewProductCartBase)
 export { NewProductCart }
