@@ -7,6 +7,7 @@ const INITIAL_STATE = {
   email: '',
   password: '',
   error: null,
+  showError: false,
 }
 class SignUpFormBase extends Component {
   state = { ...INITIAL_STATE }
@@ -28,16 +29,12 @@ class SignUpFormBase extends Component {
         this.props.history.push('/')
       })
       .catch(error => {
-        this.setState({ error: error.message })
+        this.setState({ error: error.message, showError: true })
       })
   }
   render() {
-    const { username, email, password } = this.state
+    const { username, email, password, showError } = this.state
     const isValid = !username || !email || !password
-    if (this.state.error) {
-      const hidden = document.getElementsByClassName('register-hint')
-      hidden[0].classList.remove('hidden')
-    }
     return (
       <div className="login-form">
         <h2>Register</h2>
@@ -80,7 +77,7 @@ class SignUpFormBase extends Component {
           >
             Sign Up
           </button>
-          <p className="register-hint hidden">
+          <p className={!showError ? 'hidden' : undefined}>
             error message: {this.state.error}
           </p>
         </form>

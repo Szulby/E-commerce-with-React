@@ -7,6 +7,7 @@ const initalState = {
   password: '',
   error: null,
   authUser: null,
+  showError: false,
 }
 class SignInFormBase extends Component {
   state = { ...initalState }
@@ -24,17 +25,13 @@ class SignInFormBase extends Component {
         this.props.history.goBack()
       })
       .catch(error => {
-        this.setState({ error: error.message })
+        this.setState({ error: error.message, showError: true })
       })
     e.preventDefault()
   }
   render() {
-    const { email, password, error } = this.state
+    const { email, password, error, showError } = this.state
     const isValid = !email || !password
-    if (error) {
-      let hidden = document.getElementsByClassName('login-hint')
-      hidden[0].classList.remove('hidden')
-    }
     return (
       <div className="login-form">
         <h2>Login</h2>
@@ -68,7 +65,9 @@ class SignInFormBase extends Component {
             Sign In
           </button>
 
-          <p className="login-hint hidden">error message: {error}</p>
+          <p className={!showError ? 'hidden' : undefined}>
+            error message: {error}
+          </p>
         </form>
       </div>
     )
